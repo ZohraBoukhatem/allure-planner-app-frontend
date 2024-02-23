@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import "./NewEvent.css"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -66,7 +67,7 @@ function NewEvent() {
     setLink("bride's");
   };
 
-  const handleAdd = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newEvent = {
       bride,
@@ -104,9 +105,7 @@ function NewEvent() {
   };
 
   return (
-      <div className="justify">
-      <div className="contact">
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>The bride: </label>
           <input
             type="text"
@@ -150,7 +149,7 @@ function NewEvent() {
           />
 
           <label>The venues: </label>
-          <div className="">
+          <div>
             <input
               type="text"
               placeholder="Venue Name..."
@@ -174,26 +173,24 @@ function NewEvent() {
             />
             <button onClick={addVenue}>Add venue</button>
           </div>
-          <div className="guestAdd">
-            <div>
+          <div className="venues">        
               <h5>Venues</h5>
               <ul>
                 {venues.map((elm) => {
                   return (
-                    <>
+                    <div className="venue">
                       <li key={elm.venueName}>{elm.venueName}</li>
-                      <button onClick={(e) => venueDelete(e, elm.venueName)}>
+                      <button className="remove" onClick={(e) => venueDelete(e, elm.venueName)}>
                         x
                       </button>
-                    </>
+                    </div>
                   );
                 })}
               </ul>
-            </div>
           </div>
 
           <label>The budget: </label>
-          <div className="guest">
+          <div className="budget">
             <input
               type="text"
               placeholder="Budget..."
@@ -213,7 +210,7 @@ function NewEvent() {
           </div>
 
           <label>Vendors: </label>
-          <div className="">
+          <div>
             <input
               type="text"
               placeholder="Vendor name..."
@@ -237,22 +234,20 @@ function NewEvent() {
             />
             <button onClick={addVendor}>Add vendor</button>
           </div>
-          <div className="guestAdd">
-            <div>
+          <div className="vendors2">
               <h5>Vendors</h5>
               <ul>
                 {vendors.map((elm) => {
                   return (
-                    <>
+                    <div className="vendor">
                       <li key={elm.vendorName}>{elm.vendorName}</li>
-                      <button onClick={(e) => vendorDelete(e, elm.vendorName)}>
+                      <button className="remove" onClick={(e) => vendorDelete(e, elm.vendorName)}>
                         x
                       </button>
-                    </>
+                    </div>
                   );
                 })}
               </ul>
-            </div>
           </div>
 
           <label>The schedule: </label>
@@ -284,7 +279,7 @@ function NewEvent() {
           </div>
 
           <label>The guests: </label>
-          <div className="guest">
+          <div className="guestAdd">
             <input
               type="text"
               placeholder="Name"
@@ -304,19 +299,19 @@ function NewEvent() {
               Add guest
             </button>
           </div>
-          <div className="guestAdd">
+          <div className="guests">
             <div>
               <h5>Bride's</h5>
               <ul>
                 {guestList.map((elm) => {
                   if (elm.link === "bride's") {
                     return (
-                      <>
+                      <div className="guest">
                         <li key={elm.guestName}> {elm.guestName}</li>
-                        <button onClick={(e) => guestDelete(e, elm.guestName)}>
+                        <button className="remove" onClick={(e) => guestDelete(e, elm.guestName)}>
                           x
                         </button>
-                      </>
+                      </div>
                     );
                   }
                 })}
@@ -328,24 +323,22 @@ function NewEvent() {
                 {guestList.map((elm) => {
                   if (elm.link === "groom's") {
                     return (
-                      <>
+                      <div className="guest">
                         <li key={elm.guestName}> {elm.guestName}</li>
-                        <button onClick={(e) => guestDelete(e, elm.guestName)}>
+                        <button className="remove" onClick={(e) => guestDelete(e, elm.guestName)}>
                           x
                         </button>
-                      </>
+                      </div>
                     );
                   }
                 })}
               </ul>
             </div>
           </div>
-          <button type="submit" onClick={handleAdd}>
+          <button type="submit">
             Add event
           </button>
         </form>
-      </div>
-      </div>
   );
 }
 export default NewEvent;

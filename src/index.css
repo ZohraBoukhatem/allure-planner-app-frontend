@@ -65,5 +65,13 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+}
 
+ul li,
+ol li {
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
