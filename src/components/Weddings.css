@@ -1,0 +1,45 @@
+.weddings {
+  margin: 10%;
+}
+.weddings ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-inline-start: 0%;
+}
+.weddings ul li,
+.newEvent {
+  margin: 1%;
+  background-color: #61443424;
+  width: 30%;
+  height: 90px;
+  border-radius: 7px;
+}
+
+.weddings ul li a,
+.newEvent a {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+
+.weddings ul li:hover,
+.newEvent:hover {
+  background-color: #e9e0dc5c;
+}
+
+@media (max-width: 800px) {
+  .weddings ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .weddings ul li,
+  .newWedding {
+    width: 70%;
+  }
+}

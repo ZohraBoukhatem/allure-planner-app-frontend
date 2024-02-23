@@ -5,18 +5,38 @@ import OtherEvents from "../components/OtherEvents";
 import { useState } from "react";
 
 function Events() {
-  const [content, setContent] = useState("weddings")
-  
-  
+  const [content, setContent] = useState("weddings");
+
   return (
-    <>
-    <button onClick={() => {setContent("weddings")}}>Weddings</button>
-    <button onClick={() => {setContent("workshop")}}>Workshop</button>
-    <button onClick={() => {setContent("other")}}>OtherEvents</button>
-  {content === "weddings" && <Weddings/>}
-  {content === "workshop" && <WorkShop />}
-  {content === "other" && <OtherEvents />}
-    </>
-  )
+    <div className="events">
+      <button
+        onClick={() => {
+          setContent("weddings");
+        }}
+      >
+        Weddings
+      </button>
+      <button
+        onClick={() => {
+          setContent("workshop");
+        }}
+      >
+        Workshop
+      </button>
+      <button
+        onClick={() => {
+          setContent("other");
+        }}
+      >
+        OtherEvents
+      </button>
+      <br />
+      <img src="/divider.png" alt="divider" />
+
+      {content === "weddings" && <Weddings />}
+      {content === "workshop" && <WorkShop />}
+      {content === "other" && <OtherEvents />}
+    </div>
+  );
 }
 export default Events;

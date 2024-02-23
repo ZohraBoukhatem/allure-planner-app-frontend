@@ -15,6 +15,9 @@ function Navbar() {
     <>
       <nav className="nav">
         <div className="navbar">
+          <div className="home">
+            <a href="/">Home</a>
+          </div>
           <section>
             <input id="menu-toggle" type="checkbox" />
             <label className="menu-button-container" htmlFor="menu-toggle">
@@ -39,10 +42,14 @@ function Navbar() {
             ) : (
               <ul className="menu">
                 <li>
-                  <a href="/signup">Signup</a>
+                  <a href="/signup">
+                    <div>Signup</div>
+                  </a>
                 </li>
                 <li>
-                  <a href="/login">Login</a>
+                  <a href="/login">
+                    <div>Login</div>
+                  </a>
                 </li>
               </ul>
             )}
