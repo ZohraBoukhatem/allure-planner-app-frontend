@@ -24,20 +24,29 @@ function Weddings() {
         <img src="/logoGif.gif" alt="animatedLogo" />
       ) : (
         <div className="weddings">
-          <ul>
-            {eventList.map((elm) => {
-              return (
-                <li key={elm._id}>
-                  <a href={`/events/${elm._id}`}>
-                    {elm.bride.brideFirstName} + {elm.groom.groomFirstName}
-                  </a>
-                </li>
-              );
-            })}
-            <div className="newEvent">
-              <a href="/events/new">New event</a>
+          {eventList.map((elm) => {
+            return (
+              <div class="stack">
+                      <a key={elm._id} href={`/events/${elm._id}`}>
+                <div class="card">
+                  <div class="wedding">
+                        {elm.bride.brideFirstName} + {elm.groom.groomFirstName}
+                 
+                  </div>
+                </div>
+                      </a>
+              </div>
+            );
+          })}
+          <div class="stack">
+                <a href="/events/new">
+            <div class="card">
+              <div class="wedding">
+                  New event
+              </div>
             </div>
-          </ul>
+                  </a>
+          </div>
         </div>
       )}
     </>

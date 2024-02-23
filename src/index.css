@@ -25,6 +25,7 @@
 
 a {
   text-decoration: inherit;
+  color: black;
 }
 
 body {
@@ -74,4 +75,5 @@ ol li {
 
 a:hover {
   text-decoration: none;
+  color: black;
 }
