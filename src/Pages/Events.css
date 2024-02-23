@@ -1,0 +1,45 @@
+.events {
+  align-items: center;
+}
+
+.events ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   justify-content: center;
+   padding-inline-start: 0%;
+}
+.events ul li, .newEvent{
+    margin: 1%;
+    background-color: #61443424;
+    width: 30%;
+    height: 90px;
+    border-radius: 7px;
+  }
+  
+  .events ul li a, .newEvent a{
+   height: 90px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: black;
+}
+
+  .events ul li:hover, .newEvent:hover {
+    background-color: #e9e0dc5c;
+    padding: 10px;
+    font-size: large;
+  }
+
+  @media (max-width: 800px) {
+    .events ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .events ul li, .newEvent {
+      width: 70%;
+    }
+    
+  }

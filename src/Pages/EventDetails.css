@@ -1,0 +1,41 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vendors, .notes {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px 30px;
+    background-color: #ad414136;
+    padding: 5%;
+    border-radius: 5px;
+}
+
+
+.basicInfo, .guestList {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px 30px;
+    background-color: #6144342f;
+    padding: 5%;
+    border-radius: 5px;
+
+}
+
+.date, .schedule {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px 30px;
+        background-color: rgba(255, 255, 255, 0.779);
+    padding: 5%;
+    border-radius: 5px;
+}
+
+.divider {
+    padding: 0%;
+    margin: 0%;
+    width: 300px
+  }
+
+  button a {
+    width: 100%;
+  }
