@@ -4,8 +4,8 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function EditEvent() {
-  const {eventId} = useParams()
+function EditWedding() {
+  const {weddingId} = useParams()
   
   const [loading, setLoading] = useState(true)
 
@@ -64,7 +64,7 @@ function EditEvent() {
 
 useEffect(() => {
   axios
-  .get(`${API_URL}/events/${eventId}`)
+  .get(`${API_URL}/weddings/${weddingId}`)
   .then((response) => {
     setBrideFirstName(response.data.bride.brideFirstName)
     setBrideLastName(response.data.bride.brideLastName)
@@ -111,7 +111,7 @@ useEffect(() => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    const updatedEvent = {
+    const updatedWedding = {
       bride,
       groom,
       date,
@@ -124,8 +124,8 @@ useEffect(() => {
 
   
     axios
-      .put(`${API_URL}/events/${eventId}`, updatedEvent)
-      .then(() => navigate(`/events/${eventId}`))
+      .put(`${API_URL}/weddings/${weddingId}`, updatedWedding)
+      .then(() => navigate(`/weddings/${weddingId}`))
       .catch((error) => console.log(error));
   };
 
@@ -388,7 +388,7 @@ useEffect(() => {
             </div>
           </div>
           <button type="submit" onClick={handleEdit}>
-            Edit event
+            Edit Wedding
           </button>
         </form>
       </div>
@@ -397,4 +397,4 @@ useEffect(() => {
   );
 }
 
-export default EditEvent;
+export default EditWedding;

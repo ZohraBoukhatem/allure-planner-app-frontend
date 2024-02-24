@@ -5,14 +5,14 @@ import "./Weddings.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Weddings() {
-  const [eventList, setEventList] = useState([]);
+  const [weddingsList, setWeddingsList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/events`)
+      .get(`${API_URL}/weddings`)
       .then((response) => {
-        setEventList(response.data);
+        setWeddingsList(response.data);
         setLoading(false);
       })
       .catch((error) => console.log(error));
@@ -20,35 +20,41 @@ function Weddings() {
 
   return (
     <>
+      {weddingsList 
+      ? <>
       {loading ? (
         <img src="/logoGif.gif" alt="animatedLogo" />
-      ) : (
-        <div className="weddings">
-          {eventList.map((elm) => {
+        ) : (
+          <div className="weddings">
+          {weddingsList.map((elm) => {
             return (
               <div class="stack">
-                      <a key={elm._id} href={`/events/${elm._id}`}>
+                      <a key={elm._id} href={`/weddings/${elm._id}`}>
                 <div class="card">
                   <div class="wedding">
-                        {elm.bride.brideFirstName} + {elm.groom.groomFirstName}
-                 
+                  {elm.bride.brideFirstName} + {elm.groom.groomFirstName}
+                  
                   </div>
-                </div>
+                  </div>
                       </a>
               </div>
-            );
+              );
           })}
           <div class="stack">
-                <a href="/events/new">
+                <a href="/weddings/new">
             <div class="card">
-              <div class="wedding">
-                  New event
+            <div class="wedding">
+                  New wedding
               </div>
             </div>
                   </a>
           </div>
         </div>
       )}
+      </>
+    :
+          <p>no weddings</p>
+}
     </>
   );
 }

@@ -4,14 +4,13 @@ import axios from "axios"
 const API_URL = import.meta.env.VITE_API_URL;
 
 
-function DeleteEvent(props) {
+function DeleteWedding(props) {
 
     const navigate = useNavigate();
 
 const handleDelete = (e) => {
        e.preventDefault()
-console.log(props.eventId)
-    axios.delete(`${API_URL}/events/${props.eventId}`)
+    axios.delete(`${API_URL}/weddings/${props.weddingId}`)
     .then(() => {
         navigate("/events")
     })
@@ -19,9 +18,9 @@ console.log(props.eventId)
 }
 
  return (
-    <button onClick={handleDelete}>Delete event</button>
+    <button onClick={handleDelete}>Delete wedding</button>
  )
 
 }
 
-export default DeleteEvent
+export default DeleteWedding

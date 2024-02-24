@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import "./NewEvent.css";
+import "./NewWedding.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function NewEvent() {
+function NewWedding() {
   const navigate = useNavigate();
 
   const [brideFirstName, setBrideFirstName] = useState("");
@@ -69,7 +69,7 @@ function NewEvent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newEvent = {
+    const newWedding = {
       bride,
       groom,
       date,
@@ -81,7 +81,7 @@ function NewEvent() {
     };
 
     axios
-      .post(`${API_URL}/events`, newEvent)
+      .post(`${API_URL}/weddings`, newWedding)
       .then((response) => {
         navigate(`/events`);
       })
@@ -306,15 +306,15 @@ function NewEvent() {
             <option>bride's</option>
             <option>groom's</option>
           </select>
+          </div>
           <button type="submit" onClick={addGuest}>
             Add guest
           </button>
-        </div>
          {guestList.length > 0 &&
         <div className="guests">
-          <div>
-            <h5>Bride's</h5>
+         
             <ul>
+            <h5>Bride's</h5>
               {guestList.map((elm) => {
                 if (elm.link === "bride's") {
                   return (
@@ -331,10 +331,10 @@ function NewEvent() {
                 }
               })}
             </ul>
-          </div>
-          <div>
-            <h5>Groom's</h5>
-            <ul>
+    
+       
+       <ul>
+              <h5>Groom's</h5>
               {guestList.map((elm) => {
                 if (elm.link === "groom's") {
                   return (
@@ -352,11 +352,14 @@ function NewEvent() {
               })}
             </ul>
           </div>
-        </div>
-            }
-        <button type="submit">Add event</button>
+        
+      }
+           
+      <hr/>
+
+        <button className="submitButton" type="submit">Add wedding</button>
       </div>
     </form>
   );
 }
-export default NewEvent;
+export default NewWedding;

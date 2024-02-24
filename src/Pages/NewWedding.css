@@ -72,6 +72,7 @@ form img {
   margin: 2%;
 } 
 
+
 .newWedding .guests *{
   margin: 10%;
 }
@@ -83,6 +84,22 @@ form img {
 
 .newWedding .guest, .newWedding .venue, .newWedding .vendor {
   display: flex;
-  margin-bottom: 10px;
- 
+  width: 150px;
+  border: 1px solid rgb(180, 178, 178);
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.newWedding ul {
+  padding-left: 0 !important;
+}
+
+.submitButton {
+  margin: 5%
+}
+
+.guests ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
