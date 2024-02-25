@@ -23,7 +23,7 @@ input {
 
 @media (max-width: 700px) {
   
-  form {
+  form, .schedule {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.779);
     border-radius: 5px;
@@ -34,7 +34,7 @@ input {
 }
 
 @media (min-width:700px) and (max-width: 900px) {
-  form {
+  form, .schedule {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.779);
     border-radius: 5px;
@@ -45,7 +45,7 @@ input {
 }
 
 @media (min-width: 900px) {
-  form {
+  form, .schedule {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.779);
     border-radius: 5px;
@@ -72,10 +72,6 @@ form img {
   margin: 2%;
 } 
 
-
-.newWedding .guests *{
-  margin: 10%;
-}
 .remove {
   width: 20px;
   height: 20px;
@@ -84,10 +80,11 @@ form img {
 
 .newWedding .guest, .newWedding .venue, .newWedding .vendor {
   display: flex;
-  width: 150px;
+  width: 170px;
   border: 1px solid rgb(180, 178, 178);
   justify-content: space-between;
   padding: 1%;
+  margin: 2%;
 }
 
 .newWedding ul {
