@@ -699,22 +699,55 @@ function WeddingDetails() {
                     ></path>{" "}
                   </g>
                 </svg>
-                <ul>
-                  {wedding.guestList.map((guest) => (
-                    <li key={guest._id}>
-                      {guest.guestName}, {guest.link}
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="listing">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Bride's</th>
+                      </tr>
+                    </thead>
+                    {wedding.guestList.map((elm) => {
+                      if (elm.link === "bride's") {
+                        return (
+                          <tbody>
+                            <tr>
+                              <td key={elm.guestName}> {elm.guestName}</td>
+                            </tr>
+                          </tbody>
+                        );
+                      }
+                    })}
+                  </table>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Groom's</th>
+                      </tr>
+                    </thead>
+                    {wedding.guestList.map((elm) => {
+                      if (elm.link === "groom's") {
+                        return (
+                          <tbody>
+                            <tr>
+                              <td key={elm.guestName}> {elm.guestName}</td>
+                            </tr>
+                          </tbody>
+                        );
+                      }
+                    })}
+                  </table>
+                </div>
               </div>
               <img src="/divider.png" alt="divider" />
             </>
           )}
+
           <div className="buttons">
-          <DeleteWedding weddingId={weddingId} />
-          <button>
-            <a href={`/weddings/${weddingId}/edit`}> Edit Wedding</a>
-          </button>
+            <DeleteWedding weddingId={weddingId} />
+            <button>
+              <a href={`/weddings/${weddingId}/edit`}> Edit Wedding</a>
+            </button>
           </div>
         </div>
       )}
