@@ -1,0 +1,102 @@
+
+.info {
+    text-align: left;
+}
+
+.query button, .query p {
+    align-self: flex-end;
+    margin-bottom: 2%;
+}
+
+.query * {
+    padding: 1%;
+}
+
+.showMore {
+    background-color: #cab5d3;
+    width: 10%;
+    height: 25px;
+    margin-left: 1%;
+}
+@media (max-width:700px) {
+    #queriesPage {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+    }
+    .query {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.779);
+        border-radius: 5px;
+        padding: 7%;
+        margin: 1%;   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+}
+/*mittwoch 13uhr*/
+
+@media (min-width:700px) and (max-width: 1000px){
+    
+    #queriesPage {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+    }
+    .query {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.779);
+        border-radius: 5px;
+        padding: 6%;
+        margin: 1% 10%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+    }
+    
+    
+}
+@media (min-width:1000px) {
+
+    #queriesPage {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-inline-start: 0px;
+    }
+    .query {
+        width: 35%;
+        height: fit-content;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.779);
+        border-radius: 5px;
+        padding: 3%;
+        margin: 1% 1%;   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+  #queriesPage li {
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #e9ecef;
+  }
+  
+
+  #queriesPage p {
+    background-color: #89687d;
+    min-width: fit-content;
+    width: 90px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+  }

@@ -9,28 +9,30 @@ function Events() {
 
   return (
     <div className="events">
+      <div>
+
       <button
         onClick={() => {
           setContent("weddings");
         }}
-      >
+        >
         Weddings
       </button>
       <button
         onClick={() => {
           setContent("workshop");
         }}
-      >
+        >
         Workshop
       </button>
       <button
         onClick={() => {
           setContent("other");
         }}
-      >
+        >
         OtherEvents
       </button>
-      <br />
+        </div>
       <img src="/divider.png" alt="divider" />
 
       {content === "weddings" && <Weddings />}

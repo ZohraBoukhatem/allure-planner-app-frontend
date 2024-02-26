@@ -71,7 +71,7 @@ useEffect(() => {
     setBrideLastName(response.data.bride.brideLastName)
     setGroomFirstName(response.data.groom.groomFirstName)
     setGroomLastName(response.data.groom.groomLastName)
-    setDate(response.data.date)
+    setDate(response.data.date.slice(0, 10))
     setVenues(response.data.venues)
     setAmount(response.data.budget.amount)
     setCurrency(response.data.budget.currency)
