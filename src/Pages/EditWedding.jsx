@@ -160,6 +160,8 @@ useEffect(() => {
           name="brideFirstName"
           value={brideFirstName}
           onChange={(e) => setBrideFirstName(e.target.value)}
+          required={true}
+
         />
 
         <input
@@ -168,7 +170,9 @@ useEffect(() => {
           name="brideLastName"
           value={brideLastName}
           onChange={(e) => setBrideLastName(e.target.value)}
-        />
+          required={true}
+
+/>
 
         <label>The groom: </label>
         <input
@@ -177,18 +181,22 @@ useEffect(() => {
           name="groomFirstName"
           value={groomFirstName}
           onChange={(e) => setGroomFirstName(e.target.value)}
-        />
+          required={true}
+
+/>
         <input
           type="text"
           placeholder="Last name..."
           name="groomLastName"
           value={groomLastName}
           onChange={(e) => setGroomLastName(e.target.value)}
-        />
+          required={true}
+
+/>
 
         <label>The date: </label>
         <input
-          type="text"
+          type="date"
           placeholder="yyyy-mm-dd"
           name="date"
           value={date}
@@ -212,8 +220,8 @@ useEffect(() => {
             onChange={(e) => setVenueAddress(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Venue number..."
+            type="number"
+            placeholder="Phone number..."
             name="venueTel"
             value={venueTel}
             onChange={(e) => setVenueTel(e.target.value)}
@@ -243,7 +251,7 @@ useEffect(() => {
         <label>The budget: </label>
         <div className="budget">
           <input
-            type="text"
+            type="number"
             placeholder="Budget..."
             name="amount"
             value={amount}
@@ -277,8 +285,8 @@ useEffect(() => {
             onChange={(e) => setVendorAddress(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Vendor number..."
+            type="number"
+            placeholder="Phone number..."
             name="vendorTel"
             value={vendorTel}
             onChange={(e) => setVendorTel(e.target.value)}

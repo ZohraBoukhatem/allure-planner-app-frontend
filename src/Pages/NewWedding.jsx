@@ -113,6 +113,7 @@ function NewWedding() {
         <input
           type="text"
           placeholder="First name..."
+          required={true}
           name="brideFirstName"
           value={brideFirstName}
           onChange={(e) => setBrideFirstName(e.target.value)}
@@ -121,6 +122,7 @@ function NewWedding() {
         <input
           type="text"
           placeholder="Last name..."
+          required={true}
           name="brideLastName"
           value={brideLastName}
           onChange={(e) => setBrideLastName(e.target.value)}
@@ -130,6 +132,7 @@ function NewWedding() {
         <input
           type="text"
           placeholder="First name..."
+          required={true}
           name="groomFirstName"
           value={groomFirstName}
           onChange={(e) => setGroomFirstName(e.target.value)}
@@ -137,6 +140,7 @@ function NewWedding() {
         <input
           type="text"
           placeholder="Last name..."
+          required={true}
           name="groomLastName"
           value={groomLastName}
           onChange={(e) => setGroomLastName(e.target.value)}
@@ -144,7 +148,7 @@ function NewWedding() {
 
         <label>The date: </label>
         <input
-          type="text"
+          type="date"
           placeholder="yyyy-mm-dd"
           name="date"
           value={date}
@@ -168,8 +172,8 @@ function NewWedding() {
             onChange={(e) => setVenueAddress(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Venue number..."
+            type="number"
+            placeholder="Phone number..."
             name="venueTel"
             value={venueTel}
             onChange={(e) => setVenueTel(e.target.value)}
@@ -199,7 +203,7 @@ function NewWedding() {
         <label>The budget: </label>
         <div className="budget">
           <input
-            type="text"
+            type="number"
             placeholder="Budget..."
             name="amount"
             value={amount}
@@ -233,8 +237,8 @@ function NewWedding() {
             onChange={(e) => setVendorAddress(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Vendor number..."
+            type="number"
+            placeholder="Phone number..."
             name="vendorTel"
             value={vendorTel}
             onChange={(e) => setVendorTel(e.target.value)}

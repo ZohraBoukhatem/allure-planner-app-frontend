@@ -22,6 +22,10 @@ The backend repo can be found here: https://github.com/ZohraBoukhatem/allure-pla
 [x] style wedding details/edit page
 [ ] add other events (CRUD), style
 [x] fix show more button -> connect with specific queries (added scroll option instead)
+[x] add warning message for required fields and fix input types
 [ ] authentication
 [ ] deploy DB, backend, frontend
 [ ] better style 
+
+maybe:
+[ ] add search bar

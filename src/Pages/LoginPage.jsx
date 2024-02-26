@@ -43,6 +43,7 @@ function LoginPage() {
           value={email}
           onChange={handleEmail}
           placeholder="Your email.."
+          required={true}
         />
         <label htmlFor="password">Password</label>
         <input 
@@ -51,7 +52,9 @@ function LoginPage() {
         name="password" 
         value = {password}
         onChange={handlePassword}
-        placeholder="Your password.." />
+        placeholder="Your password.." 
+        required={true}
+        />
          <button type="submit">
             Login
           </button>

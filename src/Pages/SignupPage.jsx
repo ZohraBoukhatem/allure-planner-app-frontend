@@ -39,6 +39,7 @@ function SignupPage() {
             value={email}
             onChange={handleEmail}
             placeholder="Type email"
+            required={true}
           />
 
           <label>Password</label>
@@ -48,6 +49,7 @@ function SignupPage() {
             value={password}
             onChange={handlePassword}
             placeholder="Type password"
+            required={true}
           />
 
           <button type="submit">Sign Up</button>
