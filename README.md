@@ -8,3 +8,20 @@ This repo is the frontend part of the allure planner app. Allure is an up-and-co
 - lastly, npm run dev
 
 The backend repo can be found here: https://github.com/ZohraBoukhatem/allure-planner-app-backend
+
+# MVP
+
+[x] add sign up / login 
+[x] add queries page (CREATE, UPDATE op)
+[x] add events page 
+[x] add components
+    [x]-> weddings (CRUD op)
+    []-> other events
+[x] style sign up / login pages
+[x] style homepage, eventpage 
+[x] style wedding details/edit page
+[ ] add other events (CRUD), style
+[x] fix show more button -> connect with specific queries (added scroll option instead)
+[ ] authentication
+[ ] deploy DB, backend, frontend
+[ ] better style 

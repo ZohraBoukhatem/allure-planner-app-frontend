@@ -1,4 +1,10 @@
-
+.subject {
+    overflow-y: scroll;
+    height: 200px;
+    line-height:25px;
+    background-color: rgba(251, 248, 248, 0.412);
+    
+}
 .info {
     text-align: left;
 }
@@ -12,12 +18,6 @@
     padding: 1%;
 }
 
-.showMore {
-    background-color: #cab5d3;
-    width: 10%;
-    height: 25px;
-    margin-left: 1%;
-}
 @media (max-width:700px) {
     #queriesPage {
         display: flex;

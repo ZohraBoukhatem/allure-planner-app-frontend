@@ -9,6 +9,7 @@ function Queries() {
   const [loading, setLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
   const [read, setRead] = useState(false)
+
   useEffect(() => {
     axios
       .get(`${API_URL}/queries`)
@@ -57,24 +58,9 @@ function Queries() {
                   <li>Subject:</li>
                 </div>
 
-                <div>
-                  {query.subject.slice(0, 500)}
-                  {showMore ? (
-                    <>
-                      {query.subject.slice(500)}
-                      <button
-                        className="showMore"
-                        onClick={() => setShowMore(!showMore)}>
-                           ⇡
-                      </button>
-                    </>
-                  ) : (
-                    <button
-                      className="showMore"
-                      onClick={() => setShowMore(!showMore)}>
-                      ⇣ 
-                    </button>
-                  )}
+                <div className="subject">
+                  {query.subject}
+               
                  
                 </div>
               </div>
