@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import authService from "../services/auth.service";
 
-function SignupPage() {
+const API_URL = import.meta.env.VITE_API_URL
+
+function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -17,16 +18,21 @@ function SignupPage() {
     e.preventDefault();
     const requestBody = { email, password };
 
-    authService
-      .signup(requestBody)
-      .then((res) => {
+    console.log(requestBody)
+    console.log("handleSubmit, signuppage")
+
+    axios
+      .post(`${API_URL}/auth/signup`, requestBody)
+      .then((response) => {
+        console.log(".then")
         navigate("/login");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
+        const errorDescription = "unable to sign up"
         setErrorMessage(errorDescription);
-      });
-  };
+
+  })
+  }
 
   return (
     <>

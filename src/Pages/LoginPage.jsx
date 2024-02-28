@@ -1,10 +1,11 @@
 import "./LoginPage.css"
 import { useState, useContext} from "react";
 import { Link, useNavigate} from "react-router-dom"
-import authService from "../services/auth.service";
 import { AuthContext } from "../context/auth.context";
 
-function LoginPage() {
+const API_URL = import.meta.env.VITE_API_URL
+
+function LoginPage(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,14 +21,13 @@ function LoginPage() {
     e.preventDefault()
     const requestBody = { email, password }
     
-    authService
-    .login(requestBody)
-    .then((res) => {
-      storeToken(res.data.authToken)
-      authenticateUser()
-      navigate("/")
+    axios
+    .post(`${API_URL}/auth/login`, requestBody)
+    .then((response) => {
+      storeToken(response.data.authToken);
+      authenticateUser();
+      navigate("/");
     })
-
   };
   
 
